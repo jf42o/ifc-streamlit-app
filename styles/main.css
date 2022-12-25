@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+
+* {font-family: 'Readex Pro';}
+
+
+a {
+    text-decoration: none;
+    color: rgb(45, 45, 45) !important;
+    font-weight: 200;
+}
+
+a:hover {
+    color: #d33636 !important;
+    text-decoration: none;
+}
+
+ul {list-style-type: none;}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5%;
+}
+
+section.css-po3vlj.exg6vvm15 {
+    background-color: rgb(255, 255, 255);
+    text-decoration: white;
+    color: rgb(255, 255, 255);
+    height: 1000px;
+}
+small.css-1aehpvj.euu6i2w0 {
+    color: white;
+}
+button.css-1cpxqw2.edgvbvh9 {
+    color: rgb(0, 0, 0);
+    border-color: rgb(255, 255, 255);
+}
+
+path {
+    visibility: hidden;
+}
+
+span.css-9ycgxx.exg6vvm12 {
+
+    color: white;
+
+}
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}

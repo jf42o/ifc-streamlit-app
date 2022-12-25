@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 streamlit==1.16.0
-=======
 streamlit
->>>>>>> c72d152 (first commit)
 ifcopenshell
 matplotlib
 plotly

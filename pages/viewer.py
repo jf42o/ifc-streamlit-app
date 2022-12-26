@@ -16,7 +16,7 @@ st.set_page_config(
         page_icon="🎮",
     )
 
-    
+
 hide_streamlit_style = """
     <style>
     #MainMenu {visibility: hidden;}
@@ -27,8 +27,8 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-#with open("./styles/main.css") as f:
-    #st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+with open("./styles/main.css") as f:
+    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
                                                                     
 # Tell streamlit that there is a component called ifc_js_viewer,            #
 # and that the code to display that component is in the "frontend" folder   #

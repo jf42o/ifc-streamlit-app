@@ -43,8 +43,8 @@ def main():
     
     st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-    #with open("./styles/main.css") as f:
-        #st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+    with open("./styles/main.css") as f:
+        st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
     st.header("no-BIM app 📈")
     st.markdown("""

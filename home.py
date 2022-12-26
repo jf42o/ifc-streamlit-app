@@ -53,7 +53,7 @@ def main():
         trough converting it into open formats
         """)
     st.markdown("""
-        just drop your IFC somewhere! 👇
+        just drop your IFC! 👇
             """)
 
     ## Add File uploader

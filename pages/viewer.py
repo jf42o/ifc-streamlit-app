@@ -16,6 +16,17 @@ st.set_page_config(
         page_icon="🎮",
     )
 
+    
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 #with open("./styles/main.css") as f:
     #st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
                                                                     
@@ -195,6 +206,17 @@ def write_health_data():
 
     
 def execute():
+
+
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
     initialise_debug_props()
     st.header("🎮 BIM-viewer")
     if "ifc_file" in session and session["ifc_file"]:

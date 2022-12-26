@@ -1,5 +1,19 @@
 
 from pathlib import Path
+import xlsxwriter
+import os
+
+def get_download_path():
+    """Returns the default downloads path for linux or windows"""
+    if os.name == 'nt':
+        import winreg
+        sub_key = r'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
+        downloads_guid = '{374DE290-123F-4565-9164-39C4925E467B}'
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, sub_key) as key:
+            location = winreg.QueryValueEx(key, downloads_guid)[0]
+        return location
+    else:
+        return os.path.join(os.path.expanduser('~'), 'downloads')
 
 CLASS = "Class"
 LEVEL = "Level"
@@ -27,14 +41,14 @@ def get_quantities(frame, quantity_set):
 
 def download_csv(file_name, dataframe):
     file_name = file_name.replace('.ifc', '.csv')
-    downloads_path = str(Path.home() / "Downloads")
-    dataframe.to_csv(f'{downloads_path}/{file_name}')
+    download_path = get_download_path()
+    download_path
+    dataframe.to_csv(f'/.{file_name}')
 
 def download_excel(file_name, dataframe):
     import pandas
     file_name = file_name.replace('.ifc', '.xlsx')
-    downloads_path = str(Path.home() / "Downloads")
-    writer = pandas.ExcelWriter(f'{downloads_path}/{file_name}', engine="xlsxwriter") ## pip install xlsxwriter
+    writer = pandas.ExcelWriter(f'./{file_name}', engine="xlsxwriter") ## pip install xlsxwriter
     for object_class in dataframe[CLASS].unique():
         df_class = dataframe[dataframe[CLASS] == object_class].dropna(axis=1, how="all")
         df_class.to_excel(writer, sheet_name=object_class)

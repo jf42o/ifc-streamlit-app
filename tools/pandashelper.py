@@ -1,4 +1,6 @@
 
+from pathlib import Path
+
 CLASS = "Class"
 LEVEL = "Level"
 
@@ -25,12 +27,14 @@ def get_quantities(frame, quantity_set):
 
 def download_csv(file_name, dataframe):
     file_name = file_name.replace('.ifc', '.csv')
-    dataframe.to_csv(f'./{file_name}')
+    downloads_path = str(Path.home() / "Downloads")
+    dataframe.to_csv(f'{downloads_path}/{file_name}')
 
 def download_excel(file_name, dataframe):
     import pandas
     file_name = file_name.replace('.ifc', '.xlsx')
-    writer = pandas.ExcelWriter(f'./{file_name}', engine="xlsxwriter") ## pip install xlsxwriter
+    downloads_path = str(Path.home() / "Downloads")
+    writer = pandas.ExcelWriter(f'{downloads_path}/{file_name}', engine="xlsxwriter") ## pip install xlsxwriter
     for object_class in dataframe[CLASS].unique():
         df_class = dataframe[dataframe[CLASS] == object_class].dropna(axis=1, how="all")
         df_class.to_excel(writer, sheet_name=object_class)

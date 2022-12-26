@@ -41,9 +41,7 @@ def get_quantities(frame, quantity_set):
 
 def download_csv(file_name, dataframe):
     file_name = file_name.replace('.ifc', '.csv')
-    download_path = get_download_path()
-    download_path
-    dataframe.to_csv(f'/.{file_name}')
+    dataframe.to_csv(file_name)
 
 def download_excel(file_name, dataframe):
     import pandas

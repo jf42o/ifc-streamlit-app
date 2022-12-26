@@ -29,7 +29,7 @@ def download_csv_qto():
     pandashelper.download_csv(session.file_name,session["filtered_frame_qto"])
 
 def download_csv_df():
-    pandashelper.download_csv(session.file_name,session["filtered_frame_df"])
+    return pandashelper.download_csv(session.file_name,session["filtered_frame_df"])
 
 def download_excel_qto():
     pandashelper.download_excel(session.file_name,session["filtered_frame_qto"])
@@ -73,6 +73,8 @@ def execute():
             st.write(session["filtered_frame_df"])
             st.button("📄 download csv", key="download_csv_dataframe", on_click=download_csv_df)
             st.button("📗 download excel", key="download_excel_dataframe", on_click=download_excel_df)
+            #CHANGED
+            st.download_button("download", session["filtered_frame_df"].to_csv(), session.file_name.replace(".ifc", ".csv"))
         with tab2:
             row2col1, row2col2 = st.columns(2)
             with row2col1:
@@ -104,6 +106,7 @@ def execute():
                         st.plotly_chart(graph)
             st.button("📄 download csv", key="download_csv_qto", on_click=download_csv_qto)
             st.button("📗 download excel", key="download_excel_qto", on_click=download_excel_qto)
+            #st.download_button("download", session["filtered_frame_df"].to_csv())
     else: 
         st.header("please load a file from the home menu")
     

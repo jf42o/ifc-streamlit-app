@@ -22,7 +22,6 @@ st.set_page_config(
 # Tell streamlit that there is a component called ifc_js_viewer,            #
 # and that the code to display that component is in the "frontend" folder   #
 frontend_dir = (Path(__file__).parent / "frontend-viewer").absolute()
-frontend_dir 
 _component_func = components.declare_component(                             #
 	"ifc_js_viewer", path=str(frontend_dir)                                 #
 )                                                                           #
